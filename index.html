@@ -5,23 +5,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Count your fingers</title>
 	<style type="text/css">
-		h1 {
+		div {
 			position: absolute;
 			left:  50%;
 			top:  50%;
 			transform: translate(-50%, -50%);
 			user-select: none;
+                        align-text: center;
 		}
 	</style>
 </head>
 <body>
-	<h1 id="finger_html_container">0 finger</h1>
-	<script type="text/javascript">
+        <div>
+	        <h1 id="finger_html_container">0 finger</h1>
+	        <button action="calculateFingers()">Calculate</button>
+        </div>
+        <script type="text/javascript">
 		let fingers = 0;
 		window.onclick = () => {
 			fingers += 1;
 			finger_html_container.innerText = fingers + " " + (fingers > 1 ? "fingers" : "finger");
 		}
-	</script>
+                function calculateFingers() {
+                        nb_fingers = Math.random() * 100;
+        		finger_html_container.innerText = nb_fingers + " " + (nb_fingers > 1 ? "fingers" : "finger");
+	        }
+        </script>
 </body>
 </html>
