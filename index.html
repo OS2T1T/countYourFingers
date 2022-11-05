@@ -5,26 +5,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Count your fingers</title>
 	<style type="text/css">
-		div {
+		.container {
+			text-align: center;
+		}
+		
+		.centered {
 			position: absolute;
 			left:  50%;
 			top:  50%;
 			transform: translate(-50%, -50%);
+		}
+		
+		.no-select {
 			user-select: none;
 		}
 	</style>
 </head>
 <body>
-        <div>
-	        <h1 id="finger_html_container">0 finger</h1>
-                <button onclick="addFingers(-1)">-</button>
-                <button onclick="calculateFingers()">Calculate</button>
-                <button onclick="addFingers(1)">+</button>
+        <div class="container centered">
+	        <h1 class="no-select" id="finger_html_container">0 finger</h1>
+		<button onclick="addFingers(-1)">-</button>
+		<button onclick="calculateFingers()">Calculate</button>
+		<button onclick="addFingers(1)">+</button>
         </div>
         <script type="text/javascript">
 		let fingers = 0;
                 function textFingers(fingers) {
-                        text = fingers + " " + (Maths.abs(fingers) > 1 ? "fingers" : "finger");
+                        text = fingers + " " + (Math.abs(fingers) > 1 ? "fingers" : "finger");
                         return text;
                 }
 		function addFingers(x) {
