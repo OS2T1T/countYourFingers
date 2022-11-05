@@ -8,40 +8,40 @@
 		.container {
 			text-align: center;
 		}
-		
+
 		.centered {
 			position: absolute;
 			left:  50%;
 			top:  50%;
 			transform: translate(-50%, -50%);
 		}
-		
+
 		.no-select {
 			user-select: none;
 		}
 	</style>
 </head>
 <body>
-        <div class="container centered">
-	        <h1 class="no-select" id="finger_html_container">0 finger</h1>
+	<div class="container centered">
+		<h1 class="no-select" id="finger_html_container">0 finger</h1>
 		<button onclick="addFingers(-1)">-</button>
 		<button onclick="calculateFingers()">Calculate</button>
 		<button onclick="addFingers(1)">+</button>
-        </div>
-        <script type="text/javascript">
+	</div>
+	<script type="text/javascript">
 		let fingers = 0;
-                function textFingers(fingers) {
-                        text = fingers + " " + (Math.abs(fingers) > 1 ? "fingers" : "finger");
-                        return text;
-                }
+		function textFingers(fingers) {
+			text = fingers + " " + (Math.abs(fingers) > 1 ? "fingers" : "finger");
+			return text;
+		}
 		function addFingers(x) {
 			fingers += x;
 			finger_html_container.innerText = textFingers(fingers);
 		}
-                function calculateFingers() {
-                        nb_fingers = Math.random() * 100;
-        		finger_html_container.innerText = textFingers(fingers) + " = " + nb_fingers;
-	        }
-        </script>
+		function calculateFingers() {
+			nb_fingers = Math.random() * 100;
+			finger_html_container.innerText = textFingers(fingers) + " = " + nb_fingers;
+		}
+	</script>
 </body>
 </html>
