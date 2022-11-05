@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Count your fingers</title>
+	<style type="text/css">
+		h1 {
+			position: absolute;
+			left:  50%;
+			top:  50%;
+			transform: translate(-50%, -50%);
+			user-select: none;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="finger_html_container">0 finger</h1>
+	<script type="text/javascript">
+		let fingers = 0;
+		window.onclick = () => {
+			fingers += 1;
+			finger_html_container.innerText = fingers + " " + (fingers > 1 ? "fingers" : "finger");
+		}
+	</script>
+</body>
+</html>
