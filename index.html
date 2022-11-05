@@ -23,13 +23,17 @@
         </div>
         <script type="text/javascript">
 		let fingers = 0;
+                function textFingers(fingers) {
+                        text = fingers + " " + (Maths.abs(fingers) > 1 ? "fingers" : "finger");
+                        return text;
+                }
 		function addFingers(x) {
 			fingers += x;
-			finger_html_container.innerText = fingers + " " + (fingers > 1 ? "fingers" : "finger");
+			finger_html_container.innerText = textFingers(fingers);
 		}
                 function calculateFingers() {
                         nb_fingers = Math.random() * 100;
-        		finger_html_container.innerText = nb_fingers + " " + (nb_fingers > 1 ? "fingers" : "finger");
+        		finger_html_container.innerText = textFingers(fingers) + " = " + nb_fingers;
 	        }
         </script>
 </body>
