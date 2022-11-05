@@ -11,19 +11,20 @@
 			top:  50%;
 			transform: translate(-50%, -50%);
 			user-select: none;
-                        align-text: center;
 		}
 	</style>
 </head>
 <body>
         <div>
 	        <h1 id="finger_html_container">0 finger</h1>
-	        <button action="calculateFingers()">Calculate</button>
+                <button action="addFingers(-1)">-</button>
+	        <button action="addFingers(1)">+</button>
+                <button action="calculateFingers()">Calculate</button>
         </div>
         <script type="text/javascript">
 		let fingers = 0;
-		window.onclick = () => {
-			fingers += 1;
+		function addFingers(x) {
+			fingers += x;
 			finger_html_container.innerText = fingers + " " + (fingers > 1 ? "fingers" : "finger");
 		}
                 function calculateFingers() {
